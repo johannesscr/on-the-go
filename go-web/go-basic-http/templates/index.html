@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Basic Server</title>
+</head>
+<body>
+<div>
+    {{if .Method}}
+    <div><h3>Method</h3><span>{{.Method}}</span></div>
+    {{end}}
+    {{if .Host}}
+    <div><h3>Host</h3><span>{{.Host}}</span></div>
+    {{end}}
+    {{if .ContentLength}}
+    <div><h3>Content Length</h3><span>{{.ContentLength}}</span></div>
+    {{end}}
+    {{if .URL}}
+    <div>
+        <h3>URL</h3>
+        <ul>
+            <li>Scheme: {{.URL.Scheme}}</li>
+            <li>Opaque: {{.URL.Opaque}}</li>
+            <li>User: {{.URL.User}}</li>
+            <li>Host: {{.URL.Host}}</li>
+            <li>Path: {{.URL.Path}}</li>
+            <li>RawPath: {{.URL.RawPath}}</li>
+            <li>ForceQuery: {{.URL.ForceQuery}}</li>
+            <li>RawQuery: {{.URL.RawQuery}}</li>
+            <li>Fragment: {{.URL.Fragment}}</li>
+            <li>RawFragment: {{.URL.RawFragment}}</li>
+        </ul>
+    </div>
+    {{end}}
+    {{if .Header}}
+    <div>
+        <h3>Headers</h3>
+        {{range $key, $val := .Header}}
+        <p>{{$key}}</p>
+        <ul>
+            {{range $val}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+        {{end}}
+    </div>
+    {{end}}
+    {{if .Form}}
+    <div>
+        <h3>Form</h3>
+        {{range $key, $val := .Form}}
+        <p>{{$key}}</p>
+        <ul>
+            {{range $val}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+        {{end}}
+    </div>
+    {{end}}
+    <form action="/?firstName=jo" method="post">
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" type="text">
+        <input type="submit" name="submit" value="addo no">
+    </form>
+</div>
+</body>
+</html>

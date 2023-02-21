@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <h3>Option 1</h3>
+        <h5>application/x-www-form-urlencoded</h5>
+        <p>
+            Default. All characters are encoded before sent (spaces are converted
+            to "+" symbols, and special characters are converted to ASCII HEX
+            values)
+        </p>
+        <form method="post" action="/" enctype="application/x-www-form-urlencoded">
+            <label for="name1">Text</label>
+            <input id="name1" name="text" type="text">
+            <label for="radio11">Radio 1 (1)</label>
+            <input id="radio11" name="radio" type="radio" value="Radio Option 1">
+            <label for="radio12">Radio 1 (2)</label>
+            <input id="radio12" name="radio" type="radio" value="Radio Option 2">
+            <label for="checkbox11">Checkbox 1 (1)</label>
+            <input id="checkbox11" name="checkbox1" type="checkbox" value="Checkbox 1">
+            <label for="checkbox12">Checkbox 1 (2)</label>
+            <input id="checkbox12" name="checkbox2" type="checkbox" value="Checkbox 2">
+            <label for="number1">Number</label>
+            <input id="number1" name="number" type="number">
+            <input type="submit" value="Submit 1">
+        </form>
+    </div>
+    <div>
+        <h3>Option 2</h3>
+        <h5>multipart/form-data</h5>
+        <p>
+            This value is necessary if the user will upload a file through
+            the form
+        </p>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <label for="name2">Text</label>
+            <input id="name2" name="text" type="text">
+            <label for="radio21">Radio 2 (1)</label>
+            <input id="radio21" name="radio" type="radio" value="Radio Option 1">
+            <label for="radio22">Radio 2 (2)</label>
+            <input id="radio22" name="radio" type="radio" value="Radio Option 2">
+            <label for="checkbox21">Checkbox 2 (1)</label>
+            <input id="checkbox21" name="checkbox1" type="checkbox" value="Checkbox 1">
+            <label for="checkbox22">Checkbox 2 (2)</label>
+            <input id="checkbox22" name="checkbox2" type="checkbox" value="Checkbox 2">
+            <label for="number2">Number</label>
+            <input id="number2" name="number" type="number">
+            <label for="fileId">File</label>
+            <input id="fileId" name="uploadFile" type="file">
+            <input type="submit" value="Submit 2">
+        </form>
+    </div>
+    <div>
+        <h3>Option 3</h3>
+        <h5>text/plain</h5>
+        <p>
+            Sends data without any encoding at all. Not recommended
+        </p>
+        <form method="post" action="/" enctype="text/plain">
+            <label for="name3">Text</label>
+            <input id="name3" name="text" type="text">
+            <label for="radio31">Radio 3 (1)</label>
+            <input id="radio31" name="radio" type="radio" value="Radio Option 1">
+            <label for="radio32">Radio 3 (2)</label>
+            <input id="radio32" name="radio" type="radio" value="Radio Option 2">
+            <label for="checkbox31">Checkbox 2 (1)</label>
+            <input id="checkbox31" name="checkbox1" type="checkbox" value="Checkbox 1">
+            <label for="checkbox32">Checkbox 2 (2)</label>
+            <input id="checkbox32" name="checkbox2" type="checkbox" value="Checkbox 2">
+            <label for="number3">Number</label>
+            <input id="number3" name="number" type="number">
+            <input type="submit" value="Submit 3">
+        </form>
+    </div>
+    <div>
+        <h3>Binary</h3>
+        <p>{{.Binary}}</p>
+    </div>
+    <div>
+        <h3>Bytes</h3>
+        <p>{{.Bytes}}</p>
+    </div>
+    <div>
+        <h3>String</h3>
+        <p>{{.String}}</p>
+    </div>
+</div>
+</body>
+</html>

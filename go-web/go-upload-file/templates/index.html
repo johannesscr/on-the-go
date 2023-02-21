@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3>Upload a File with Go</h3>
+    <div>
+        <h5>Upload, Read and Return the Text from a text file</h5>
+        <form method="post" action="/read/txt" enctype="multipart/form-data">
+            <label for="uploadReadTxtId">Select a File</label>
+            <input id="uploadReadTxtId" name="uploadFile" type="file">
+            <input type="submit" value="Upload File">
+        </form>
+    </div>
+    <div>
+        <h5>Upload, Save and Return any file</h5>
+        <form method="post" action="/save" enctype="multipart/form-data">
+            <label for="uploadFileId">Select a File</label>
+            <input id="uploadFileId" name="uploadFile" type="file">
+            <input type="submit" value="Upload File">
+        </form>
+        <p></p>
+    </div>
+    <div>
+        <h5>File as Bytes</h5>
+        <p>{{.Bytes}}</p>
+        <h5>File as String</h5>
+        <p>{{.String}}</p>
+    </div>
+</div>
+</body>
+</html>

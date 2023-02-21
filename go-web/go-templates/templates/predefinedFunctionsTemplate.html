@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="https://pkg.go.dev/text/template@go1.17.1#hdr-Functions">To Golang Text/Template</a>
+    <div>
+        <h3>Index</h3>
+        <p>access by index position</p>
+        {{index .Xs 0}}
+        {{index .Xs 2}}
+        {{index .Xs 1}}
+    </div>
+    <div>
+        <h3>If</h3>
+        {{if eq .Score1 .Score2}}
+        <p>Score1 {{.Score1}} is equal to {{.Score2}}</p>
+        {{else if lt .Score1 .Score2}}
+        <p>Score1 {{.Score1}} is less than {{.Score2}}</p>
+        {{else}}
+        <p>Score1 {{.Score1}} is greater than {{.Score2}}</p>
+        {{end}}
+    </div>
+</div>
+</body>
+</html>

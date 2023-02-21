@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <div>
+        <div>
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="first_name" type="text">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="last_name" type="text">
+        </div>
+        <div>
+            <button onclick="submit(event)" type="submit">Submit</button>
+        </div>
+        <pre id="resBody"></pre>
+    </div>
+</div>
+
+<script>
+    function submit(event) {
+        event.preventDefault();
+
+        let firstName = document.querySelector('input#firstName').value;
+        let lastName = document.querySelector('input#lastName').value;
+        let payload = {
+            firstName: firstName,
+            lastName: lastName
+        };
+        let resBody = document.querySelector('#resBody');
+
+        let xhr = new XMLHttpRequest();
+        let method = 'POST';
+        let url = 'http://localhost:8080/json-body'
+        xhr.open(method, url, true);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                console.log("hi")
+                resBody.innerHTML = xhr.responseText
+            }
+        };
+        // finished defining the XHR request, now we can send the request
+        xhr.send(JSON.stringify(payload));
+    }
+</script>
+
+</body>
+</html>

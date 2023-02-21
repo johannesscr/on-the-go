@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h2>Get Form</h2>
+  <p>Sends the data via the request URL</p>
+  <form method="get" action="/form">
+    <label for="firstNameGet">First Name</label>
+    <input id="firstNameGet" name="firstName" type="text">
+    <label for="lastNameGet">Last Name</label>
+    <input id="lastNameGet" name="lastName" type="text">
+    <label for="subscribedGet">Subscribe</label>
+    <input id="subscribedGet" name="subscribed" type="checkbox">
+    <input type="submit" value="Submit Get">
+  </form>
+
+  <h2>Post Form</h2>
+  <p>Sends the data via teh request body</p>
+  <form method="post" action="/form">
+    <label for="firstNamePost">First Name</label>
+    <input id="firstNamePost" name="firstName" type="text">
+    <label for="lastNamePost">Last Name</label>
+    <input id="lastNamePost" name="lastName" type="text">
+    <label for="subscribedPost">Subscribe</label>
+    <input id="subscribedPost" name="subscribed" type="checkbox">
+    <input type="submit" value="Submit Post">
+  </form>
+
+  <h2>The Data</h2>
+  <p>First Name: {{.FirstName}}</p>
+  <p>Last Name: {{.LastName}}</p>
+  <p>Subscribed: {{.Subscribed}}</p>
+</div>
+</body>
+</html>
