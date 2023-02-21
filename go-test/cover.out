@@ -1,0 +1,9 @@
+mode: set
+github.com/JohannesScr/test-in-go/main.go:9.13,12.2 2 0
+github.com/JohannesScr/test-in-go/main.go:15.27,17.23 2 1
+github.com/JohannesScr/test-in-go/main.go:20.2,20.12 1 1
+github.com/JohannesScr/test-in-go/main.go:17.23,19.3 1 1
+github.com/JohannesScr/test-in-go/util/util.go:7.31,9.2 1 1
+github.com/JohannesScr/test-in-go/util/util.go:12.25,14.24 2 1
+github.com/JohannesScr/test-in-go/util/util.go:17.2,17.14 1 1
+github.com/JohannesScr/test-in-go/util/util.go:14.24,16.3 1 1
